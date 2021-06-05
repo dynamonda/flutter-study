@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -40,7 +41,11 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text('Novel Memos'),
+        actions: <Widget>[
+          Icon(Icons.add),
+          Icon(Icons.share),
+        ],
       ),
       body: Center(
         child: Column(
