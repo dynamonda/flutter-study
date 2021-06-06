@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:noveler/next_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -47,24 +48,16 @@ class _MyHomePageState extends State<MyHomePage> {
           Icon(Icons.share),
         ],
       ),
-      body: Container(
-        color: Colors.grey,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            children: <Widget>[
-              Text(
-                'カウンター回数',
-              ),
-              Text(
-                'とりあえず追加してみる'
-              ),
-              Text(
-                '$_counter',
-                style: Theme.of(context).textTheme.headline4,
-              ),
-            ],
-          ),
+      body: Center(
+        child: ElevatedButton(
+          child: Text('次へ'),
+          onPressed: (){
+            // ボタンを押した時
+            Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context)=> NextPage()),
+            );
+          },
         ),
       ),
       floatingActionButton: FloatingActionButton(
