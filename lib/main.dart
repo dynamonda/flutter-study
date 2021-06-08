@@ -15,11 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => MyHomePage(title: 'Flutter Demo Page'),
-        '/next': (context) => NextPage(),
-      },
+      home: MyHomePage(title: 'Novel memo'),
     );
   }
 }
@@ -55,9 +51,13 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: ElevatedButton(
           child: Text('次へ'),
-          onPressed: (){
+          onPressed: () {
             // ボタンを押した時
-            Navigator.pushNamed(context, '/next');
+            Navigator.push(
+              context, MaterialPageRoute(
+                builder: (context) => NextPage('次のページに行きました！')
+              )
+            );
           },
         ),
       ),
