@@ -51,13 +51,18 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: ElevatedButton(
           child: Text('次へ'),
-          onPressed: () {
+          onPressed: () async {
             // ボタンを押した時
-            Navigator.push(
+            // 実は結果を受け取る事ができる
+
+            // async: 「止める関数だよー」と知らせる
+            // await: 「時間かかるからちょっとまっててー」と指示する
+            final result = await Navigator.push(
               context, MaterialPageRoute(
                 builder: (context) => NextPage('次のページに行きました！')
               )
             );
+            print(result);
           },
         ),
       ),

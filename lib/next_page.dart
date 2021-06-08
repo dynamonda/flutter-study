@@ -23,7 +23,8 @@ class NextPage extends StatelessWidget{
             ElevatedButton(
               child: Text('戻る'),
               onPressed: (){
-                Navigator.pop(context);
+                // 第2引数に返り値を入れられる
+                Navigator.pop(context, '戻ったよ～！');
               },
             ),
           ],
